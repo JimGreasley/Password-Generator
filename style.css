@@ -97,6 +97,7 @@ button[disabled] {
   float: right;
 }
 
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -115,7 +116,8 @@ button[disabled] {
   border: 2px dashed #c0c7cf;
   border-radius: 6px;
   resize: none;
-  overflow: hidden;
+/* changed overflow to 'auto'  */
+  overflow: auto;
 }
 
 @media (max-width: 690px) {
