@@ -2,23 +2,24 @@
 var generateBtn = document.querySelector("#generate");
 
 // define variables used to generate password
-var lowercase  = "abcdefghijklmnopqrstuvwxyz";
-var uppercase  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var special    = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-var numeric    = "1234567890";
+var lowercase_char  = "abcdefghijklmnopqrstuvwxyz";
+var uppercase_char  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var special_char    = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var numeric_char    = "1234567890";
 
 
 
 // function to create password based on user input
+
 function generatePassword() {
 
   // -------------------------------------------------------------------------------------
   // get desired length of password from user - must be greater than 7 and less than 129
   // -------------------------------------------------------------------------------------
   do {
-    var  pwd_length = prompt("Please enter length (between 8 and 128) of password to be created."); 
+    var  pswd_length = prompt("Please enter length (between 8 and 128) of password to be created."); 
 
-    if (pwd_length < 8 || pwd_length > 128) {
+    if (pswd_length < 8 || pswd_length > 128) {
        alert("Invalid password length, must be greater than 7 and less than 129 characters, please re-enter");
        keep_looping = true;
     } 
@@ -28,7 +29,7 @@ function generatePassword() {
   }
   while (keep_looping);
 
-  console.log("Password length: ", pwd_length);
+  console.log("Password length: ", pswd_length);
 
   // ----------------------------------------------------------------------------------------------------------
   // get password format criteria from user - include lowercase, uppercase, numeric and/or special caracters?
@@ -59,6 +60,38 @@ function generatePassword() {
 
   console.log(use_lowercase, use_uppercase, use_numeric, use_special);
 
+
+  // create a new password based on the user's criteria
+
+  // initialize new pswd to empty string
+    var new_pswd = "";
+
+  //  define next char to be appended to pswd
+    var next_char;
+
+    for (let i = 0; i < pswd_length; i++) {
+      
+      if (use_lowercase) {
+         next_char = lowercase_char[Math.floor(Math.random() * 26)];
+      }
+      
+      if (use_uppercase) {
+        next_char = uppercase_char[Math.floor(Math.random() * 26)];
+      } 
+      
+      if (use_numeric) {
+        next_char = numeric_char[Math.floor(Math.random() * 10)];
+      } 
+      
+      if (use_special) {
+        next_char = special_char[Math.floor(Math.random() * 31)];
+      }
+      
+      new_pswd = new_pswd + next_char;
+
+    }
+
+    console.log(pswd);
 
 }
 
