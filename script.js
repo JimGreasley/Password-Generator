@@ -17,13 +17,6 @@ var special_char    = "!#$%&'()*+,-./:;<=>?@[]^`{|}~";
 
 function generatePassword() {
 
-  // -----------------------------------------------------
-  // clear previous password; code below doesn't work
-  // -----------------------------------------------------
-
-  // document.getElementById('passwrod').innerHTML = " ";
-
-
   // -------------------------------------------------------------------------------------
   // get desired length of password from user - must be greater than 7 and less than 129
   // -------------------------------------------------------------------------------------

@@ -1,5 +1,7 @@
 # Password-Generator
 
+This app creates a random password from 8 upto 128 characters long comprised of at least one of lowercase, uppercase, numeric or special characters.
+
 A button click starts the process.
 
 The user is prompted for the length of the password to be created.
@@ -13,3 +15,12 @@ The new password starts as an empty string.  A function is used to determine the
 reaches the desired length. 
 
 Once complete the new password is displayed on screen. Needed to change CSS for #password to use 'auto' overflow.
+
+## GitHub code
+
+https://github.com/JimGreasley/Password-Generator
+
+
+## Deployment link
+
+https://jimgreasley.github.io/Password-Generator/
